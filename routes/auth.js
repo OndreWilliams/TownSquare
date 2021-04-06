@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 const { check, validationResult } = require('express-validator');
-const { loginUser } = require('./authManager');
+const { loginUser, logoutUser } = require('./authManager');
 
 router.get('/signup', csrfProtection, (req, res, next) => {
     const user = db.User.build();
@@ -67,6 +67,11 @@ router.post('/login', csrfProtection, async (req, res, next) => {
 
 
 
+});
+
+router.post('/logout', (req, res) => {
+    logoutUser(req, res);
+    res.redirect('/');
 });
 
 module.exports = router;
