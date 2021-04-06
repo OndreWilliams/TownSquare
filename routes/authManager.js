@@ -2,8 +2,8 @@ const db = require('../db/models');
 
 const loginUser = (req, res, user) => {
     req.session.auth = {username: user.username};
-    console.log('*************************************');
-    console.log(req.session.auth);
+    // console.log('*************************************');
+    // console.log(req.session.auth);
 };
 
 const restoreUser = async (req, res, next) => {
@@ -13,11 +13,11 @@ const restoreUser = async (req, res, next) => {
         try {
             const user = await db.User.findOne({
                 where: {username},
-                include: Question
+                include: db.Question
             });
-            console.log('*************************************');
-            console.log('*************************************');
-            console.log(user);
+            // console.log('*************************************');
+            // console.log('*************************************');
+            // console.log(user);
             if(user){
                 res.locals.authenticated = true;
                 res.locals.user = user;
