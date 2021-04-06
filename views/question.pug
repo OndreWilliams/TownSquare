@@ -1,0 +1,7 @@
+extends layout.pug
+block content
+    form(action='/new/question' method='post')
+        label(for='content') Ask a question!
+        input(type='textarea' id='content' name='content' required)
+
+        button(type='submit') Post

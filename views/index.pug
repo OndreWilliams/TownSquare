@@ -1,15 +1,20 @@
 extends layout
-
-append head
-  //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
-  //- add page specific js
-  script(src="/javascripts/index.js" type="module" defer)
-
+mixin question
+  div.townsquare-dark__contentArea--question
+    h1 __NEW QUESTION__WIP
 block content
-    h1= title
-    p Welcome to your Project Skeleton
-    if locals.authenticated
-        p Welcome #{locals.user.username}
-        form(action='/auth/logout' method='post')
-            button(type='submit') Logout
+  div.townsquare-dark__contentArea--header
+    h1 Top Questions
+    button(type="Button" class="townsquare-dark__contentArea--headerButton") Ask Questions
+    div.townsquare-dark__contentArea--headerGridGroup
+      button#headerButton1 Interesting
+      button#headerButton2 <span>123</123> Bountied
+      button#headerButton3 Hot
+      button#headerButton4 Week
+      button#headerButton5 Month
+  div.townsquare-dark__contentArea--questions
+    +question
+    +question
+    +question
+    +question
+    +question

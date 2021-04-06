@@ -1,8 +1,38 @@
 doctype html
 html
   head
-      block head
-        title="Express Starter App"
-        link(rel='stylesheet' href='/stylesheets/reset.css')
-  body
-    block content
+    block head
+      title="Express Starter App"
+      link(rel="stylesheet", type="text/css", href="/style.css")
+  body.townsquare-dark
+    div.townsquare-dark__nav
+      nav.townsquare-dark__navbar
+        div.townsquare-dark__navbar--highlight
+        p.townsquare-dark__navbar--image LOGO
+        a.townsquare-dark__navbar--modalLeft Products
+        input(type="text" class="townsquare-dark__navbar--searchbar" placeholder="Search")
+        a.townsquare-dark__navbar--icon I1
+        a.townsquare-dark__navbar--icon2 I2
+        a.townsquare-dark__navbar--icon3 I3
+        a.townsquare-dark__navbar--icon4 I4
+        a.townsquare-dark__navbar--icon5 I5
+    div.townsquare-dark__main
+      div.townsquare-dark__leftSidebar
+        h3 Home
+        h3 Public
+        h3 Find a job
+      div.townsquare-dark__contentArea
+        block content
+      div.townsquare-dark__rightSidebar
+        div.townsquare-dark__rightSidebar--overflowbox
+          div.townsquare-dark__rightSidebar--overflowItem
+            div.townsquare-dark__rightSidebar--overflowItemHeader
+              h2 The Overflow Blog
+            div.townsquare-dark__rightSidebar--overflowItemContent
+              p <icon>i</icon> An item
+              p <icon>i</icon> An item
+          div.townsquare-dark__rightSidebar--overflowItem
+            div.townsquare-dark__rightSidebar--overflowItemHeader
+              h2 Featured on Meta
+            div.townsquare-dark__rightSidebar--overflowItemContent
+              p <icon>i</icon> An item
