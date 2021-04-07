@@ -1,7 +1,13 @@
 extends layout.pug
 block content
-    form(action='/new/question' method='post')
-        label(for='content') Ask a question!
-        input(type='textarea' id='content' name='content' required)
-
-        button(type='submit') Post
+    div.townsquare-dark__questionArea--header
+        h1 Ask a public Question
+    div.townsquare-dark__questionArea--question
+        form(action='/new/question' method='post')
+            h2 Title
+            h3 Be specific and imagine you’re asking a question to another person
+            input(type='text' id='contentTitle' name='contentTitle' placeholder="e.g. Where is the best pizza in NY?" required)
+            h2 Body
+            h3 Include all the information someone would need to answer your question
+            textarea(id='tinyEditTextArea' name='content')
+            button(type='submit') Post

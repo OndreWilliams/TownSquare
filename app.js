@@ -11,6 +11,10 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const accountRouter = require('./routes/accountHandler');
 const newPostRouter = require('./routes/newPost');
+
+
+
+
 // changing route from auth
 const app = express();
 // view engine setup
@@ -21,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'styles')));
-
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
 const { sessionSecret } = require('./config');

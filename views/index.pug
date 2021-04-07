@@ -6,7 +6,8 @@ mixin question(content)
 block content
   div.townsquare-dark__contentArea--header
     h1 Top Questions
-    button(type="Button" class="townsquare-dark__contentArea--headerButton") Ask Questions
+    form(action='/new/question' method='get')
+      button(type='submit') Ask Question
     div.townsquare-dark__contentArea--headerGridGroup
       button#headerButton1 Interesting
       button#headerButton2 <span>123</span> Bountied
@@ -15,4 +16,4 @@ block content
       button#headerButton5 Month
   div.townsquare-dark__contentArea--questions
     each question in user.Questions
-        +question(question.content)
+      +question(question.content)
