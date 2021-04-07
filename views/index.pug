@@ -7,13 +7,12 @@ block content
   div.townsquare-dark__contentArea--header
     h1 Top Questions
     form(action='/new/question' method='get')
-      button(type='submit') Ask Question
+      button(type='submit' id='askQuestion' class='headerButton') Ask Question
     div.townsquare-dark__contentArea--headerGridGroup
-      button#headerButton1 Interesting
-      button#headerButton2 <span>123</span> Bountied
-      button#headerButton3 Hot
-      button#headerButton4 Week
-      button#headerButton5 Month
+      button#headerButton1.headerButton Interesting
+      button#headerButton2.headerButton Hot
+      button#headerButton3.headerButton Week
+      button#headerButton4.headerButton Month
   div.townsquare-dark__contentArea--questions
     each question in user.Questions
       +question(question.content)
