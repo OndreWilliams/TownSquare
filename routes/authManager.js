@@ -15,12 +15,20 @@ const restoreUser = async (req, res, next) => {
                 where: {username},
                 include: db.Question
             });
-            // console.log('*************************************');
-            // console.log('*************************************');
+
+            let allQuestions;
+            // if(res.locals.filteredQuestions){
+            //     allQuestions = res.locals.filteredQuestions;
+            // } else {
+            //     allQuestions = await db.Question.findAll();
+            // }
+
+
             // console.log(user);
             if(user){
                 res.locals.authenticated = true;
                 res.locals.user = user;
+                // res.locals.allQuestions = allQuestions;
                 next();
             }
         } catch (err) {

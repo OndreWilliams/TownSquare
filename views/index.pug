@@ -15,5 +15,9 @@ block content
       button#headerButton4 Week
       button#headerButton5 Month
   div.townsquare-dark__contentArea--questions
-    each question in user.Questions
-      +question(question.content, question.id)
+    if allQuestions
+        each question in allQuestions
+            +question(question.content, question.id)
+    else
+        div.townsquare-dark__contentArea--question
+            p No questions found

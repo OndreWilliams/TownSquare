@@ -2,7 +2,8 @@ doctype html
 html
   head
     block head
-      title="Express Starter App"
+      if title
+        title= title
       link(rel="stylesheet", type="text/css", href="/style.css")
   body.townsquare-dark
     div.townsquare-dark__nav
@@ -10,7 +11,9 @@ html
         div.townsquare-dark__navbar--highlight
         p.townsquare-dark__navbar--image LOGO
         a.townsquare-dark__navbar--modalLeft Products
-        input(type="text" class="townsquare-dark__navbar--searchbar" placeholder="Search")
+        form(id='searchForm' action='/search' method='post')
+            input(type="search" name='searchQuery' id='townsquare__searchbar' class="townsquare-dark__navbar--searchbar" placeholder="Search")
+            button(type='submit' class='townsquare-dark__navbar--searchSubmit')
         a.townsquare-dark__navbar--icon I1
         a.townsquare-dark__navbar--icon2 I2
         a.townsquare-dark__navbar--icon3 I3
@@ -39,3 +42,4 @@ html
     <script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
     <!-- Script element sourcing the TinyMCE configuration -->
     <script type="application/javascript" src= "/tinymce-config.js"></script>
+    <script type="module" src= "/javascripts/index.js"></script>

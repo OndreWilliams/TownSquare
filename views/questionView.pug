@@ -5,11 +5,21 @@ block content
     div.townsquare-dark__contentArea--questions
         if comments
             each comment in comments
+                form(action='/questionView/upvote' method='post')
+                    input(type='hidden' name='vote' value= comment.id)
+                    input(type='hidden' name='questionId' value= question.id)
+                    button(type='submit' class='townsquare-dark__questionView--upvote')
+                form(action='/questionView/downVote' method='post')
+                    input(type='hidden' name='vote' value= comment.id)
+                    input(type='hidden' name='questionId' value= question.id)
+                    button(type='submit' class='townsquare-dark__questionView--downvote')
+                p= comment.voteCount
                 p= comment.content
-        form(action='/new/comment' method='post')
+        form(action='/questionView/answer' method='post')
             h3 Know someone who can answer? Share a link to this question via email, Twitter, or Facebook.
             h2 Your Answer
             input(type='text' id='contentTitle' name='contentTitle' placeholder="e.g. Where is the best pizza in NY?" required)
+            input(type='hidden' name='questionId' value= question.id)
             h2 Body
             h3 Include all the information someone would need to answer your question
             textarea(id='tinyEditTextArea' name='content')
