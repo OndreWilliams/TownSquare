@@ -1,7 +1,7 @@
 extends layout
-mixin question(content)
+mixin question(content, id)
   div.townsquare-dark__contentArea--question
-    h1= content
+    a(href=`/questionView/question/${id}`)= content
 
 block content
   div.townsquare-dark__contentArea--header
@@ -16,4 +16,4 @@ block content
       button#headerButton5 Month
   div.townsquare-dark__contentArea--questions
     each question in user.Questions
-      +question(question.content)
+      +question(question.content, question.id)

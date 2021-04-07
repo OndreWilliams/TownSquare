@@ -1,0 +1,16 @@
+extends layout
+block content
+    div.townsquare-dark__contentArea--header
+        p= question.content
+    div.townsquare-dark__contentArea--questions
+        if comments
+            each comment in comments
+                p= comment.content
+        form(action='/new/comment' method='post')
+            h3 Know someone who can answer? Share a link to this question via email, Twitter, or Facebook.
+            h2 Your Answer
+            input(type='text' id='contentTitle' name='contentTitle' placeholder="e.g. Where is the best pizza in NY?" required)
+            h2 Body
+            h3 Include all the information someone would need to answer your question
+            textarea(id='tinyEditTextArea' name='content')
+            button(type='submit') Post your answer
