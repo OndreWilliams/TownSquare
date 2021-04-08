@@ -6,14 +6,20 @@ block content
          ul
              each error in errors
                   li #{error}
-     form(action='/account/signup' method='post')
+     form(action='/account/signup' method='post' class='registerForm' id='signUpForm')
+         h2(id='loginHeader') Signup
          input(type='hidden' name='_csrf' value=csrfToken)
-         label(for='email') Email
-         input(type='text' id='email' name='email' required)
-         label(for='username') User Name
-         input(type='text' id='username' name='username' required)
-         label(for='password') Password
-         input(type='password' id='password' name='password' required)
-         label(for='passwordConfirm') Confirm Password
-         input(type='password' id='passwordConfirm' name='passwordConfirm' required)
-         button(type='submit' id='signupButton') Signup
+         div(class='userbox')
+            label(for='email') 
+            input(type='text' id='email' name='email' placeholder='Email' required)
+         div(class='userbox')
+            label(for='username') 
+            input(type='text' id='username' name='username' placeholder='Username' required)
+         div(class='userbox')
+            label(for='password') 
+            input(type='password' id='password' name='password' placeholder='Password' required)
+         div(class='userbox')
+            label(for='passwordConfirm') 
+            input(type='password' id='passwordConfirm' name='passwordConfirm' placeholder='Confirm Password' required)
+         button(type='submit' class='formButton') Submit
+         

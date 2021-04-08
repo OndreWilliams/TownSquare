@@ -357,7 +357,7 @@ textarea#tinyEditTextArea {
     box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 40%);
 
 }
-form {
+/* form {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -367,43 +367,124 @@ form {
 input {
     width:55%;
     height:30px;
-}
+} */
 
-
-
- #signupButton {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: rgb(10, 119, 13);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-    opacity: 0.9;
- }
 
  
-#loginButton {
+.formButton {
     font-size: 18px;
     font-weight: bold;
-    background-color: rgb(10, 119, 13);
+    background-color: #f48024;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 14px 16px;
+    margin: 8px 10px ;
     border: none;
     cursor: pointer;
     width: 30%;
     opacity: 0.9;
+    border-radius: 5px;
  }
 
+ .formButton:hover {
+    background-color: white;
+    color:black;
+
+ }
+
+ #signUpForm {
+     height:520px;
+     top:40%;
+ }
+
+ .registerForm {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 450px;
+    height:400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ #loginHeader {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+
+  
+  .registerForm .userbox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .registerForm .userbox label {
+    position: relative;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
 
 
+  #demoUser {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f48024;
+    color: white;
+    padding: 14px 16px;
+    margin: 8px 10px ;
+    border: none;
+    cursor: pointer;
+    width: 130px;
+    opacity: 0.9;
+    border-radius: 5px;
+    right:40%;
+    top:36.5%;
+  }
 
+  
+ #demoUser:hover {
+    background-color: white;
+    color:black;
 
-
-
+ }
+ 
+  /*
+  when the screen is less than 600px wide, 
+  make the two columns stack on top of each other 
+  instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .registerForm, .formButton, #demoUser {
+      width: 100%;
+      margin-top: 0;
+    }
+    #demoUser {
+        right:40%;
+        top:39%;
+    }
+  }
+  
  /*
  So, only the button for signup is being styled
  while the button for login is not 
