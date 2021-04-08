@@ -1,9 +1,19 @@
 extends layout.pug
 block content
-    form(action='/account/signin' method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        label(for='username') User Name
-        input(type='text' id='username' name='username' required)
-        label(for='password') Password
-        input(type='password' id='password' name='password' required)
-        button(type='submit' id='loginButton') Login
+    div(class='townsquare-dark__contentArea--registerForm')
+        form(action='/account/signin' method='post' class='registerForm')
+            h2(id='loginHeader') Login
+            input(type='hidden' name='_csrf' value=csrfToken)
+            div(class='userbox')
+                label(for='username') 
+                input(type='text' id='username' name='username' placeholder='Username' required)
+            div(class='userbox')
+                label(for='password') 
+                input(type='password' id='password' name='password' placeholder='Password' required)
+            form(action='/account/signin' method='post')
+                input(type='hidden' name='_csrf' value=csrfToken)
+                input(type='hidden' name='username' value='Visitor')
+                input(type='hidden' name='password' value='password')
+                button(type='submit' class='formButton' id='demoUser') Demo User
+                button(type='submit' class='formButton') Submit
+        

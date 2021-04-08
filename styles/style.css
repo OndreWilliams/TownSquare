@@ -1,3 +1,6 @@
+/*=========================*\
+|*GLOBAL                   *|
+/*=========================*/
 * {
     font-family: 'Roboto' 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-kerning: auto;
@@ -11,14 +14,19 @@
 
 
 
+
+/*=========================*\
+|*townsquare-dark          *|
+/*=========================*/
 body.townsquare-dark {
+    display: inline-block;
+    overflow: scroll;
     margin:0;
     font-weight:400;
     display: grid;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: 1rem;
     text-align:left;
-    position: fixed;
     top: 0;
     height: 100%;
     width: 100%;
@@ -28,6 +36,9 @@ body.townsquare-dark {
     margin-right: 0px;
     color: #c4c8cc;
 }
+
+
+/*Nav Bar*/
 .townsquare-dark__nav {
     overflow: hidden;
     background-color: #393939;
@@ -55,24 +66,75 @@ body.townsquare-dark {
     background-color: #f48024;
 }
 .townsquare-dark__navbar--image {
+    display: flex;
     grid-area: nav1;
     margin: auto;
+    height: 35px;
+    width: 182px;
 }
+@media screen and (min-width: 0px) and (max-width: 1300px) {
+    .townsquare-dark__navbar--image {
+        content: url(/favicon.png);
+        /*background: url(/favicon.png) no-repeat;*/
+        height: 35px;
+        width: 35px;
+        display: flex;
+        grid-area: nav1;
+        margin: auto;
+    }
+
+}
+
+
 .townsquare-dark__navbar--modalLeft {
     grid-area: nav2;
     margin: auto;
 }
-.townsquare-dark__navbar--searchbar {
+.townsquare-dark__navbar--searchWrapper{
+
+    align-self: center;
+
     grid-area: nav3;
-    margin: 7px;
+
+    width: 100%;
+    display: flex;
+}
+#townsquare__searchForm {
+    width: 490px;
+    margin: 0 auto;
+
     font-size:16px;
-    width: 400px;
-    position:fixed;
-    right:220px;
-    height: 35px;
-    border-radius: 4px;
-    padding-left: 10px;
-    border: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 0px;
+    margin-left:0px;
+}
+#townsquare__searchForm--searchbar{
+    background-color: #2d2d2d;
+    margin: 0 auto;
+    width: 100%;
+    height: 30px;
+    padding: 0 40px;
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    outline: none;
+
+}
+#townsquare__searchForm--searchbar:focus{
+    border: 1px solid #f48024;
+    transition: 0.35s ease;
+    color: lightgrey;
+}
+#townsquare__searchForm--searchbarIcon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 6px;
+    right: -30px;
+    z-index: 1;
 }
 .townsquare-dark__navbar--icon {
     grid-area: nav4;
@@ -94,11 +156,12 @@ body.townsquare-dark {
     grid-area: nav8;
     margin: auto;
 }
+
+
+/*Main Content*/
 .townsquare-dark__main {
     display: grid;
-    padding-left: 48px;
-    padding-bottom:240px;
-    margin: 0;
+    margin: auto;
     height: 100%;
     width: 80%;
     grid-template-columns: 10% 65% 25%;
@@ -107,27 +170,45 @@ body.townsquare-dark {
     grid-template-areas:
     "left content right";
 }
-.townsquare-dark__leftSidebar{
-    top: 50px;
-    left: 0;
-    height: 100%;
-    width: 170px;
-    position: fixed;
-    border-right: 1px solid #DEDEDE;
-    overflow-x: hidden;
-    padding-top: 20px;
-      
-      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-        .townsquare-dark__leftSidebar {padding-top: 15px;}
-        .townsquare-dark__leftSidebar a {font-size: 18px;}
-      }
+@media screen and (min-width: 0px) and (max-width: 1100px) {
+    .townsquare-dark__main {
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 100%;
+        gap: 0px 0px;
+        grid-template-areas:
+        "left content";
+    }
 }
 
+
+/*Left sidebar*/
+.townsquare-dark__leftSidebar{
+    /*TEMP Remove styles to attach to body?*/
+    /*Can used fixed relative to body?*/
+    /*grid-area: left;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*position: relative;*/
+    /*align-self: flex-start;*/
+    /*height: 100%;*/
+    /*left: 0px;*/
+    /*top: 50px;*/
+    /*width: 170px;*/
+    /*padding-top: 20px;*/
+    position: fixed;
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+}
+@media screen and (max-height: 700px) {
+    .townsquare-dark__leftSidebar {padding-top: 15px;}
+    .townsquare-dark__leftSidebar a {font-size: 18px;}
+}
 .townsquare-dark__leftSidebar a:hover {
     color: #f1f1f1;
   }
-
 .townsquare-dark__leftSidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -136,17 +217,19 @@ body.townsquare-dark {
     display: block;
     transition: 0.3s;
 }
-  
 
 
+/*Center Area*/
 #townsquare-dark__contentArea--headerButton {
     height: 40px;
 }
-
 .townsquare-dark__contentArea {
     grid-area: content;
     border-left: 1px solid grey;
 }
+
+
+/*Center Area Header*/
 .townsquare-dark__contentArea--header {
     margin: auto;
     display: grid;
@@ -160,42 +243,38 @@ body.townsquare-dark {
     "top-left top-right"
     "bot bot";
 }
-
 .townsquare-dark__contentArea--header h1 {
     grid-area: top-left;
     justify-self: flex-start;
     margin-left: 20px;
 }
-
 .townsquare-dark__contentArea--header form {
     grid-area: top-right;
     justify-self: flex-end;
     align-self: center;
     height: 40px;
 }
-
 .townsquare-dark__contentArea--header button {
     grid-area: top-right;
     justify-self: flex-end;
     align-self: center;
     height: 40px;
 }
-
 .townsquare-dark__contentArea--headerGridGroup{
     grid-area: bot;
     justify-self: flex-end;
     align-self: flex-end;
 }
-
 .townsquare-dark__contentArea--headerGridGroup button{
     height: 40px;
     margin-left: 10px;
 }
 
+
+/*Center Area Questions and Answwers*/
 .townsquare-dark__contentArea--questions {
     display: block;
 }
-
 .townsquare-dark__contentArea--question {
     margin: auto;
     align-self: center;
@@ -206,7 +285,6 @@ body.townsquare-dark {
 .townsquare-dark__contentArea--question h1{
     color: #00B7FF;
 }
-
 .townsquare-dark__contentArea--questions form {
     justify-self: flex-end;
     grid-area: top-right;
@@ -214,14 +292,11 @@ body.townsquare-dark {
     align-self: center;
     margin: 10px;
 }
-
-
 textarea#tinyEditTextArea {
     padding: 10px;
     margin: auto;
 }
-
-.townsquare-dark__questionArea--header h1 {
+.townsquare-dark__questionArea--header {
     margin: auto;
     display: grid;
     height: 60px;
@@ -239,8 +314,6 @@ textarea#tinyEditTextArea {
     justify-self: flex-start;
     margin-left: 20px;
 }
-
-
 .townsquare-dark__questionArea--question {
     margin: 20px;
     padding-left: 20px;
@@ -281,13 +354,148 @@ textarea#tinyEditTextArea {
     width: 90%;
     background-color: #4a4e51;
 }
+.townsquare-dark__contentArea--headerQuestionTitle {
+    margin: auto;
+    display: grid;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
+    gap: 0px 0px;
+    border-bottom: 1px solid rgb(74, 78, 81);
+    grid-template-areas:
+    "top"
+    "bot";
+}
+.townsquare-dark__contentArea--headerQuestionTitle p{
+    grid-area: top;
+    font-size: 40px;
+    margin-left: 10px;
+    color: #c4c8cc;
+}
+.townsquare-dark__contentArea--headerQuestionTitle h4{
+    grid-area: bot;
+    font-size: 20px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    color: #77787c;
+}
+.townsquare-dark__contentArea--commentView{
 
+}
+.townsquare-dark__contentArea--NewQuestion{
+    display: grid;
 
-.townsquare-dark__rightSidebar {
+    grid-template-columns: 10% 90%;
+    gap: 0px 0px;
+    border-bottom: 1px solid rgb(74, 78, 81);
+    grid-template-areas:
+    "left right"
+}
+.townsquare-dark__contentArea--NewQuestionWidgets{
+    grid-area: left;
+
+}
+.townsquare-dark__contentArea--NewQuestionWidgets form{
+    width: 50px;
+    height: 50px;
+    padding-bottom: 0px;
+    margin: auto;
+}
+.townsquare-dark__contentArea--NewQuestionWidgets form button{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+#DownVoteButton{
+    background-image: url('/Down_Chevron.png');
+    appearance:none;
+    -webkit-appearance:none;
+    background-color:transparent;
+    border:none;
+    outline:none;
+    background-size:40px 34px;
+    padding:22px 38px;
+    background-repeat:no-repeat;
+    cursor:pointer;
+}
+#UpVoteButton{
+    background-image: url('/Up_Chevron.png');
+    appearance:none;
+    -webkit-appearance:none;
+    background-color:transparent;
+    border:none;
+    outline:none;
+    background-size:40px 34px;
+    padding:22px 38px;
+    background-repeat:no-repeat;
+    cursor:pointer;
+}
+.townsquare-dark__contentArea--QuestionAreavoteCommentWrapper{
     grid-area: right;
+}
+.townsquare-dark__contentArea--QuestionAreavoteCommentWrapper h3{
+    grid-area: right;
+    margin-left: 10px;
+}
+.townsquare-dark__contentArea--QuestionAreavoteCountWrapper p {
+    margin: 0px;
+    text-align: center;
+    margin-left: 18px;
+}
+.townsquare-dark__contentArea--QuestionAreaFooter{
+    margin: auto;
+}
+.townsquare-dark__contentArea--QuestionAreaFooter form{
     display: block;
-    position: fixed;
-    right:30px;
+    flex-direction: inherit;
+    justify-content: inherit;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
+.townsquare-dark__contentArea--QuestionAreaFooter form h3{
+    font-size: 16px;
+    color: #c4c8cc;
+}
+
+.townsquare-dark__contentArea--QuestionAreaFooter form button{
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.15384615;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    color: #fff;
+    background-color:#00B7FF;;
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 40%);
+
+
+}
+
+/*Right sidebar / Overflow blog*/
+.townsquare-dark__rightSidebar {
+    /*Same as left sidebar -TEMP - Attach to mcontent area?*/
+    grid-area: right;
+    margin-left: auto;
+    margin-right: auto;
+    /*display: block;*/
+    /*position: fixed;*/
+    /*right:30px;*/
+}
+@media screen and (min-width: 0px) and (max-width: 1100px) {
+    .townsquare-dark__rightSidebar { display: none; }
 }
 .townsquare-dark__rightSidebar--overflowbox {
     display: block;
@@ -314,6 +522,8 @@ textarea#tinyEditTextArea {
 
 }
 
+
+/*Button styles / Misc / Uncategorized*/
 #askQuestion {
         position: relative;
         display: inline-block;
@@ -333,8 +543,6 @@ textarea#tinyEditTextArea {
         color: #fff;
         background-color:#00B7FF;;
         box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 40%);
-    
-    
 }
 .headerButton {
     position: relative;
@@ -357,7 +565,7 @@ textarea#tinyEditTextArea {
     box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 40%);
 
 }
-form {
+/* form {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -367,44 +575,138 @@ form {
 input {
     width:55%;
     height:30px;
-}
+} */
 
-
-
- #signupButton {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: rgb(10, 119, 13);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-    opacity: 0.9;
- }
 
  
-#loginButton {
+.formButton {
     font-size: 18px;
     font-weight: bold;
-    background-color: rgb(10, 119, 13);
+    background-color: #f48024;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 14px 16px;
+    margin: 8px 10px ;
     border: none;
     cursor: pointer;
     width: 30%;
     opacity: 0.9;
+    border-radius: 5px;
  }
 
+ .formButton:hover {
+    background-color: white;
+    color:black;
+
+ }
+/*
+So, only the button for signup is being styled
+while the button for login is not
+*/
+
+ #signUpForm {
+     height:520px;
+     top:40%;
+ }
+
+ .registerForm {
+    margin: auto;
+    /* position: absolute; */
+    /* top: 30%; */
+    /* left: 50%; */
+    width: 450px;
+    height: 400px;
+    /* padding: 40px; */
+    /* transform: translate(-50%, -50%); */
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    /* display: block; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+
+ #loginHeader {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+
+  
+  .registerForm .userbox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .registerForm .userbox label {
+    position: relative;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+#demoUser {
+        /* position: absolute; */
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #f48024;
+        color: white;
+        /* padding: 14px 16px; */
+        /* margin: 80px 10px; */
+        border: none;
+        cursor: pointer;
+        width: 130px;
+        opacity: 0.9;
+        border-radius: 5px;
+        /* right: 40%; */
+        /* top: 36.5%; */
+    }
+  
+
+  
+ #demoUser:hover {
+    background-color: white;
+    color:black;
+
+ }
+ 
+  /*
+  when the screen is less than 600px wide, 
+  make the two columns stack on top of each other 
+  instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .registerForm, .formButton, #demoUser {
+      width: 80%;
+      margin-left:20px;
+      margin-right: 40px;
+    }
+    #demoUser {
+        right:40%;
+        top:39%;
+    }
+  }
 
 
-
-
-
-
+  
  /*
  So, only the button for signup is being styled
  while the button for login is not 
+
+
+ .registerForm {
+  
+}
  */
