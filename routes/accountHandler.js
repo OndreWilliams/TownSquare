@@ -62,7 +62,7 @@ asyncHandler(async (req, res) => {
 }));
 // Sign in path to /account
 router.get('/', csrfProtection, function(req, res, next) {
-    res.render('signin', { title: 'Login', csrfToken: req.csrfToken() });
+    res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 });
     // Set up validators to pass into /login
 router.post('/signin', csrfProtection, async (req, res, next) => {
