@@ -9,11 +9,13 @@ html
     div.townsquare-dark__nav
       nav.townsquare-dark__navbar
         div.townsquare-dark__navbar--highlight
-        p.townsquare-dark__navbar--image LOGO
+        img.townsquare-dark__navbar--image(src="/townsquare_logo_sm.png")
         a.townsquare-dark__navbar--modalLeft Products
-        form(id='searchForm' action='/search' method='post')
-            input(type="search" name='searchQuery' id='townsquare__searchbar' class="townsquare-dark__navbar--searchbar" placeholder="Search")
-            button(type='submit' class='townsquare-dark__navbar--searchSubmit')
+        div.townsquare-dark__navbar--searchWrapper
+          img(src="/magnifyingGlass.png" width="100px" id='townsquare__searchForm--searchbarIcon')
+          form(id='townsquare__searchForm' action='/search' method='post')
+              input(type="search" name='searchQuery' id='townsquare__searchForm--searchbar' class="townsquare-dark__navbar--searchbar" placeholder="Search")
+              button(type='submit' id='townsquare__searchForm--searchButton' class='townsquare-dark__navbar--searchSubmit' hidden)
         a.townsquare-dark__navbar--icon I1
         a.townsquare-dark__navbar--icon2 I2
         a.townsquare-dark__navbar--icon3 I3
@@ -21,8 +23,8 @@ html
         a.townsquare-dark__navbar--icon5 I5
     div.townsquare-dark__main
       div.townsquare-dark__leftSidebar
-        a(href='/') Home 
-        a(href='/account') Login 
+        a(href='/') Home
+        a(href='/account') Login
         a(href='/account/signup') Sign Up
         a About
       div.townsquare-dark__contentArea
@@ -33,8 +35,8 @@ html
             div.townsquare-dark__rightSidebar--overflowItemHeader
               h2 The Overflow Blog
             div.townsquare-dark__rightSidebar--overflowItemContent
-              p <icon>i</icon> 
-              p <icon>i</icon> 
+              p <icon>i</icon>
+              p <icon>i</icon>
           div.townsquare-dark__rightSidebar--overflowItem
             div.townsquare-dark__rightSidebar--overflowItemHeader
               h2 Featured on Meta
