@@ -6,8 +6,12 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-    // console.log('****************************************');
-    // console.log(res.locals.allQuestions)
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    console.log("GET /");
+    console.log('REQ SESSION AUTH ====', req.session.auth);
+    console.log('RES LOCALS USER ====', res.locals.user);
     const allQuestions = await db.Question.findAll();
     res.render('index', { title: 'a/A Express Skeleton Home', user: res.locals.user, allQuestions});
 });

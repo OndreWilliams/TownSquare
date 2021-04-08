@@ -591,6 +591,9 @@ input {
     width: 30%;
     opacity: 0.9;
     border-radius: 5px;
+    position:relative;
+    right:-20px;
+
  }
 
  .formButton:hover {
@@ -628,15 +631,18 @@ while the button for login is not
 
  #loginHeader {
     margin: 0 0 30px;
+    margin-bottom:30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
   
+  input {
+    margin:25px;
+}
 
-  
   .registerForm .userbox input {
-    width: 100%;
+    width: 94%;
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
@@ -671,6 +677,8 @@ while the button for login is not
         width: 130px;
         opacity: 0.9;
         border-radius: 5px;
+        position:relative;
+        left:120px;
         /* right: 40%; */
         /* top: 36.5%; */
     }
@@ -689,13 +697,17 @@ while the button for login is not
   instead of next to each other */
   @media screen and (max-width: 600px) {
     .registerForm, .formButton, #demoUser {
-      width: 80%;
+      width: 90%;
       margin-left:20px;
       margin-right: 40px;
     }
     #demoUser {
-        right:40%;
-        top:39%;
+        /* right:40%;
+        top:39%; */
+        left:3px;
+    }
+    .formButton {
+        right:-2px;
     }
   }
 

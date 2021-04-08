@@ -36,6 +36,8 @@ const userValidators = [
         return true;
     })
 ]
+
+
 router.post('/signup', csrfProtection, userValidators,
 asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
@@ -60,6 +62,8 @@ asyncHandler(async (req, res) => {
         });
     }
 }));
+
+
 // Sign in path to /account
 router.get('/', csrfProtection, function(req, res, next) {
     res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
@@ -67,6 +71,14 @@ router.get('/', csrfProtection, function(req, res, next) {
     // Set up validators to pass into /login
 router.post('/signin', csrfProtection, async (req, res, next) => {
     // Validate user
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    console.log("POST /account/signin");
+    console.log('REQ SESSION AUTH ====', req.session.auth);
+    console.log('RES LOCALS USER ====', res.locals.user);
+
+
     const { username, password } = req.body;
     let errors = [];
     // If validation fails, redirect to /account/
@@ -79,15 +91,17 @@ router.post('/signin', csrfProtection, async (req, res, next) => {
             res.redirect('/');
         } else {
             errors.push('The provided credentials are not valid');
-            res.redirect('/');
+            res.render('login', { title: 'Login', csrfToken: req.csrfToken(), errors });
         }
     } else {
         errors.push('The provided credentials are not valid, please re-enter your information or visit our sign-up page if you need to create an account');
-        res.redirect('/');
+        res.render('login', { title: 'Login', csrfToken: req.csrfToken(), errors });
     }
     // Redirect to homepage
 });
-router.post('/signout', (req, res) => {
+
+
+router.get('/signout', (req, res) => {
     logoutUser(req, res);
     res.redirect('/');
 });

@@ -7,7 +7,6 @@ const loginUser = (req, res, user) => {
 };
 
 const restoreUser = async (req, res, next) => {
-
     if(req.session.auth){
         const { username } = req.session.auth;
         try {
@@ -47,8 +46,9 @@ const logoutUser = (req, res) => {
 
 const requireAuth = (req, res, next) => {
     if(!res.locals.authenticated){
-        return res.redirect('/auth')
+        return res.redirect('/account')
     }
+    next();
 };
 
 module.exports = {

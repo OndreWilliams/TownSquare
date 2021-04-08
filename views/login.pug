@@ -1,19 +1,24 @@
 extends layout.pug
 block content
     div(class='townsquare-dark__contentArea--registerForm')
+        if errors
+            p='The following errors were found:'
+            ul
+                each error in errors
+                    li #{error}
         form(action='/account/signin' method='post' class='registerForm')
             h2(id='loginHeader') Login
             input(type='hidden' name='_csrf' value=csrfToken)
             div(class='userbox')
-                label(for='username') 
+                label(for='username')
                 input(type='text' id='username' name='username' placeholder='Username' required)
             div(class='userbox')
-                label(for='password') 
+                label(for='password')
                 input(type='password' id='password' name='password' placeholder='Password' required)
-            form(action='/account/signin' method='post')
-                input(type='hidden' name='_csrf' value=csrfToken)
-                input(type='hidden' name='username' value='Visitor')
-                input(type='hidden' name='password' value='password')
-                button(type='submit' class='formButton' id='demoUser') Demo User
-                button(type='submit' class='formButton') Submit
-        
+            button(type='submit' class='formButton') Submit
+        form(action='/account/signin' method='post')
+            input(type='hidden' name='_csrf' value=csrfToken)
+            input(type='hidden' name='username' value='Visitor')
+            input(type='hidden' name='password' value='password')
+            button(type='submit' class='formButton' id='demoUser') Demo User
+
