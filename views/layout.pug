@@ -22,13 +22,17 @@ html
         a.townsquare-dark__navbar--icon3 I3
         a.townsquare-dark__navbar--icon4 I4
         a.townsquare-dark__navbar--icon5 I5
-  
+
     div.townsquare-dark__main
       div.townsquare-dark__leftSidebar
         a(href='/') Home
         a(href='/account') Login
         a(href='/account/signup') Sign Up
         a About
+        if user
+          a LOGGED IN
+          a= user.username
+          a(href="/account/signout") LOGOUT
       div.townsquare-dark__contentArea
         block content
       div.townsquare-dark__rightSidebar

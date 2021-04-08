@@ -3,9 +3,9 @@ const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 const { check, validationResult } = require('express-validator');
-const { loginUser, logoutUser } = require('./authManager');
+const { loginUser, logoutUser, requireAuth } = require('./authManager');
 // This newPost router is going to be where we are able post our questions and answers
-router.get('/question', function (req, res, next) {
+router.get('/question', requireAuth, function (req, res, next) {
     const question = db.Question.build();
     res.render('question', {
         question

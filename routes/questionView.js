@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/models');
 const { check, validationResult } = require('express-validator');
-const { loginUser, logoutUser } = require('./authManager');
+const { loginUser, logoutUser, requireAuth } = require('./authManager');
 const { csrfProtection, asyncHandler } = require('./utils');
 
-router.get('/question/:id(\\d+)', async (req, res, next) => {
+router.get('/question/:id(\\d+)', requireAuth, async (req, res, next) => {
     const id = req.params.id;
     const question = await db.Question.findOne({
         where: {id},
