@@ -139,22 +139,32 @@ body.townsquare-dark {
 .townsquare-dark__navbar--icon {
     grid-area: nav4;
     margin: auto;
+    width:30px;
+    height:30px;
 }
 .townsquare-dark__navbar--icon2 {
     grid-area: nav5;
     margin: auto;
+    width:30px;
+    height:30px;
 }
 .townsquare-dark__navbar--icon3 {
     grid-area: nav6;
     margin: auto;
+    width:30px;
+    height:30px;
 }
 .townsquare-dark__navbar--icon4 {
     grid-area: nav7;
     margin: auto;
+    width:25px;
+    height:30px;
 }
 .townsquare-dark__navbar--icon5 {
     grid-area: nav8;
     margin: auto;
+    width:25px;
+    height:30px;
 }
 
 
