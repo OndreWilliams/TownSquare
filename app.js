@@ -13,7 +13,6 @@ const accountRouter = require('./routes/accountHandler');
 const newPostRouter = require('./routes/newPost');
 const questionViewRouter = require('./routes/questionView');
 
-
 // changing route from auth
 const app = express();
 // view engine setup

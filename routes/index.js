@@ -54,4 +54,8 @@ router.post('/search', async (req, res) => {
     // console.log(res.locals.filteredQuestions);
     res.render('index', { title: 'a/A  Home', user: res.locals.user, allQuestions });
 });
+
+router.get('/about', async(req, res)=> {
+    res.render('about')
+})
 module.exports = router;
