@@ -791,9 +791,6 @@ while the button for login is not
         right:-2px;
     }
   }
-
-
-
  /*
  So, only the button for signup is being styled
  while the button for login is not
@@ -803,3 +800,120 @@ while the button for login is not
 
 }
  */
+
+footer {
+    background-color: #242729;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+}
+
+.townsquare-dark__footer--contentArea{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+    height: 300px;
+}
+
+.townsquare-dark__footer--contentAreaOne{
+    flex: 1 1 5%
+}
+.townsquare-dark__footer--contentAreaTwo{
+    flex: 1 1 20%
+}
+.townsquare-dark__footer--contentAreaThree{
+    flex: 1 1 12.5%
+}
+.townsquare-dark__footer--contentAreaFour{
+    flex: 1 1 17.5%
+}
+.townsquare-dark__footer--contentAreaFive{
+    flex: 1 1 15%
+}
+.townsquare-dark__footer--contentAreaSix{
+    flex: 1 1 30%;
+}
+
+.townsquare-dark__footer--contentAreaTwo h1{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c4c8cc;
+}
+.townsquare-dark__footer--contentAreaTwo p{
+    font-size: 13px;
+    margin: auto;
+    padding: 4px;
+    color: #818181;
+}
+.townsquare-dark__footer--contentAreaTwo p:hover{
+    color: #77787c;
+    cursor: pointer;
+}
+.townsquare-dark__footer--contentAreaThree h1{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c4c8cc;
+}
+.townsquare-dark__footer--contentAreaThree p{
+    font-size: 13px;
+    margin: auto;
+    padding: 4px;
+    color: #818181;
+}
+.townsquare-dark__footer--contentAreaThree p:hover{
+    color: #77787c;
+    cursor: pointer;
+}
+.townsquare-dark__footer--contentAreaFour h1{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c4c8cc;
+}
+.townsquare-dark__footer--contentAreaFour p{
+    font-size: 13px;
+    margin: auto;
+    padding: 4px;
+    color: #818181;
+}
+.townsquare-dark__footer--contentAreaFour p:hover{
+    color: #77787c;
+    cursor: pointer;
+}
+.townsquare-dark__footer--contentAreaFive h1{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c4c8cc;
+}
+.townsquare-dark__footer--contentAreaFive p{
+    font-size: 13px;
+    margin: auto;
+    padding: 4px;
+    color: #818181;
+}
+.townsquare-dark__footer--contentAreaFive p:hover{
+    color: #77787c;
+    cursor: pointer;
+}
+.townsquare-dark__footer--contentAreaSix h1{
+
+    font-size: 11px;
+    margin-top: 15px;
+    padding: 4px;
+    color: #818181;
+
+}
+
+.townsquare-dark__footer--contentAreaSix p{
+    text-align: left;
+    font-size: 11px;
+    margin: auto;
+    padding: 4px;
+    color: #818181;
+
+}
