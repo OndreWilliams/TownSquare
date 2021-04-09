@@ -1,8 +1,14 @@
 extends layout
-mixin question(content, id)
+mixin question(content, id, createdAt, votes, views, answers)
   div.townsquare-dark__contentArea--question
     a(href=`/questionView/question/${id}`)= content
-
+    p= createdAt
+    p#questionVotes= votes
+    p#questionViews= answers
+    p#questionAnswers= views
+    p#questionVotestxt votes
+    p#questionViewstxt answers
+    p#questionAnswerstxt views
 block content
   div.townsquare-dark__contentArea--header
     h1 Top Questions
@@ -16,7 +22,7 @@ block content
   div.townsquare-dark__contentArea--questions
     if allQuestions
         each question in allQuestions
-            +question(question.content, question.id)
+            +question(question.content, question.id, question.createdAt, 1,2,3)
     else
         div.townsquare-dark__contentArea--question
             p No questions found
