@@ -1,5 +1,5 @@
 window.addEventListener("load", (event)=>{
-    console.log("hello from javascript!")
+    // console.log("hello from javascript!")
     const input = document.querySelector('input[type="search"]');
     input.onsearch = () => {
         console.log("The term searched for was " + input.value);
@@ -11,11 +11,11 @@ window.addEventListener("load", (event)=>{
         //     console.log("Request complete! response:", res);
         // });
     }
-
-    document.getElementById('demoUser').addEventListener('click', (event)=> {
-        document.getElementById('username').value = 'Visitor';
-        document.getElementById('password').value = 'password';
-        document.getElementById('loginForm').submit();
-    })
-
+    if (document.getElementById('demoUser')){
+        document.getElementById('demoUser').addEventListener('click', (event)=> {
+            document.getElementById('username').value = 'Visitor';
+            document.getElementById('password').value = 'password';
+            document.getElementById('loginForm').submit();
+        })
+    }
 });
