@@ -1,4 +1,4 @@
-extends layout.pug
+extends layout
 block content
     form(action='/account/signin' method='post')
         input(type='hidden' name='_csrf' value=csrfToken)

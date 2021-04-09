@@ -29,6 +29,7 @@ body.townsquare-dark {
     text-align:left;
     top: 0;
     height: 100%;
+    min-height: 1000px;
     width: 100%;
     background-color: #2d2d2d;
     margin-top: 80px;
@@ -449,7 +450,7 @@ textarea#tinyEditTextArea {
 .townsquare-dark__contentArea--headerQuestionTitle {
     margin: auto;
     display: grid;
-    height: 100px;
+    height: 140px;
     width: 100%;
     align-items: center;
     grid-template-columns: 100%;
@@ -462,7 +463,8 @@ textarea#tinyEditTextArea {
 }
 .townsquare-dark__contentArea--headerQuestionTitle p{
     grid-area: top;
-    font-size: 40px;
+    font-size: 28px;
+    font-weight: bold;
     margin-left: 10px;
     color: #c4c8cc;
 }
@@ -715,7 +717,7 @@ input {
     cursor: pointer;
     opacity: 0.9;
     border-radius: 5px;
-  
+
 }
 
 
@@ -788,7 +790,7 @@ while the button for login is not
     transition: .5s;
   }
 
- 
+
   /*
   when the screen is less than 600px wide,
   make the two columns stack on top of each other
@@ -801,13 +803,13 @@ while the button for login is not
     }
     #demoUser {
         /* right:40%;
-        /* top:39%; */ 
+        /* top:39%; */
         left:3px;
     }
     .formButton {
         right:-2px;
     }
-    
+
   }
 
   .errorMessages {
@@ -947,5 +949,4 @@ footer {
     margin: auto;
     padding: 4px;
     color: #818181;
-
 }
