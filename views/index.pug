@@ -22,7 +22,7 @@ block content
   div.townsquare-dark__contentArea--questions
     if allQuestions
         each question in allQuestions
-            +question(question.content, question.id, question.createdAt, 1,2,3)
+            +question(question.content, question.id, question.createdAt, question.totalVotes, question.totalViews, question.totalComments)
     else
         div.townsquare-dark__contentArea--question
             p No questions found
