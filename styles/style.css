@@ -82,7 +82,6 @@ body.townsquare-dark {
         grid-area: nav1;
         margin: auto;
     }
-
 }
 
 
@@ -274,17 +273,99 @@ body.townsquare-dark {
 /*Center Area Questions and Answwers*/
 .townsquare-dark__contentArea--questions {
     display: block;
+
 }
 .townsquare-dark__contentArea--question {
+    display: grid;
     margin: auto;
     align-self: center;
     justify-self: center;
     text-align: center;
     border-top: 1px solid grey;
+    height: 80px;
+    grid-template-columns: 7% 7% 7% 79%;
+    grid-template-rows: 33% 33% 34%;
+    gap: 0px 0px;
+    grid-template-areas:
+    "widget1 widget2 widget3 questionContent"
+    "widget1txt widget2txt widget3txt questionContent"
+    "empty   empty   empty   tagContent";
 }
+.townsquare-dark__contentArea--question a{
+    grid-area: questionContent;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 6px;
+    color: #3ca4ff;
+}
+.townsquare-dark__contentArea--question a:hover {
+    color:#07c
+}
+.townsquare-dark__contentArea--question p{
+    grid-area: tagContent;
+    font-size: 14px;
+    text-align: left;
+    color: #818181;
+    margin-left: 6px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#questionVotestxt{
+    grid-area: widget1txt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+    font-size: 11px;
+}
+#questionViewstxt{
+    grid-area: widget2txt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 11px;
+}
+#questionAnswerstxt{
+    grid-area: widget3txt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 11px;
+}
+#questionVotes{
+    grid-area: widget1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 18px;
+}
+#questionViews{
+    grid-area: widget2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 18px;
+}
+#questionAnswers{
+    grid-area: widget3;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
 .townsquare-dark__contentArea--question h1{
     color: #00B7FF;
 }
+
+
+
+
+
+
 .townsquare-dark__contentArea--questions form {
     justify-self: flex-end;
     grid-area: top-right;
@@ -578,7 +659,7 @@ input {
 } */
 
 
- 
+
 .formButton {
     font-size: 18px;
     font-weight: bold;
@@ -636,7 +717,7 @@ while the button for login is not
     color: #fff;
     text-align: center;
   }
-  
+
   input {
     margin:25px;
 }
@@ -682,18 +763,18 @@ while the button for login is not
         /* right: 40%; */
         /* top: 36.5%; */
     }
-  
 
-  
+
+
  #demoUser:hover {
     background-color: white;
     color:black;
 
  }
- 
+
   /*
-  when the screen is less than 600px wide, 
-  make the two columns stack on top of each other 
+  when the screen is less than 600px wide,
+  make the two columns stack on top of each other
   instead of next to each other */
   @media screen and (max-width: 600px) {
     .registerForm, .formButton, #demoUser {
@@ -712,13 +793,13 @@ while the button for login is not
   }
 
 
-  
+
  /*
  So, only the button for signup is being styled
- while the button for login is not 
+ while the button for login is not
 
 
  .registerForm {
-  
+
 }
  */
