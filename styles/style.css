@@ -69,13 +69,16 @@ body.townsquare-dark {
 .townsquare-dark__navbar--image {
     display: flex;
     grid-area: nav1;
-    margin: auto;
+    margin-left: 5px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
     height: 35px;
     width: 182px;
 }
 @media screen and (min-width: 0px) and (max-width: 1300px) {
     .townsquare-dark__navbar--image {
-        content: url(/favicon.png);
+        content: url(/favicon.ico);
         /*background: url(/favicon.png) no-repeat;*/
         height: 35px;
         width: 35px;
@@ -644,6 +647,7 @@ textarea#tinyEditTextArea {
     position: relative;
     display: inline-block;
     padding: .8em;
+    margin-right: 10px;
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: transparent;
