@@ -1,0 +1,37 @@
+extends layout.pug 
+block content
+    div(class='about-section')
+        h1(style='font-weight:bold') About Us 
+        p This app is based off of StackOverflow!
+        p TownSquare is a question and answer application that allows users to publicly share ideas and questions about anything happening in their town!
+    h2(style='text-align:center') Our Team
+    div(class='row')
+        div(class='column')
+            div(class='card')
+                img(src='/profilePic2.png' alt='Ondre' class='profPics' id='ondreCard')
+                div(class='container')
+                h2 Ondre Williams
+                p(class='title') Software Developer
+                p(class='email') ondre@example.com
+                a(href='#') 
+                    button(class='button') Contact
+        div(class='column')
+            div(class='card')
+                img(src='/ProfilePic3.png' alt='Josh' class='profPics' id='joshCard')
+                div(class='container')
+                h2 Joshua Devine
+                p(class='title') Software Developer
+                p(class='email') josh@example.com
+                a(href='#') 
+                    button(class='button') Contact
+        div(class='column' id='shaheneColumn')
+            div(class='card')
+                div(class='imageCard')
+                    img(src='/profPic1.png' alt='Shahene' class='profPics' id='shaheneCard')
+                div(class='container')
+                h2 Shahene Chaouachi
+                p(class='title') Software Developer
+                p(class='email') achaouac@mail.ccsf.edu
+                a(href='https://www.linkedin.com/in/shahene-chaouachi-1964171a4/')
+                    button(class='button') Contact
+        
