@@ -13,8 +13,6 @@ const accountRouter = require('./routes/accountHandler');
 const newPostRouter = require('./routes/newPost');
 const questionViewRouter = require('./routes/questionView');
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'styles')));
 
 // changing route from auth
 const app = express();
@@ -22,6 +20,9 @@ const app = express();
 app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'styles')));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
