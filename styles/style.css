@@ -598,7 +598,7 @@ textarea#tinyEditTextArea {
     display: block;
     font-size:14px;
     background-color:#38352B;
-
+    margin-top:17px;
 }
 .townsquare-dark__rightSidebar--overflowItem {
     border: 1px solid rgb(245, 113, 18);
@@ -737,7 +737,7 @@ while the button for login is not
 */
 
  #signUpForm {
-     height:520px;
+     height:550px;
      top:40%;
  }
 
@@ -760,9 +760,7 @@ while the button for login is not
   }
 
  #loginHeader {
-    margin: 0 0 30px;
-    margin-bottom:30px;
-    padding: 0;
+    padding: 10px;
     color: #fff;
     text-align: center;
   }
