@@ -2,10 +2,11 @@ extends layout.pug
 block content
    
      if errors
-         p='The following errors were found:'
-         ul
-             each error in errors
-                  li #{error}
+         div(class='errorMessages')
+            p='The following errors were found:'
+            ul
+               each error in errors
+                     li #{error}
      form(action='/account/signup' method='post' class='registerForm' id='signUpForm')
          h2(id='loginHeader') Signup
          input(type='hidden' name='_csrf' value=csrfToken)
@@ -21,5 +22,5 @@ block content
          div(class='userbox')
             label(for='passwordConfirm') 
             input(type='password' id='passwordConfirm' name='passwordConfirm' placeholder='Confirm Password' required)
-         button(type='submit' class='formButton') Submit
+         button(type='submit' class='formButton' id='registerButton') Submit
          

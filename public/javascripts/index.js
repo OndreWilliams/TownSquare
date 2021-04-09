@@ -12,4 +12,10 @@ window.addEventListener("load", (event)=>{
         // });
     }
 
+    document.getElementById('demoUser').addEventListener('click', (event)=> {
+        document.getElementById('username').value = 'Visitor';
+        document.getElementById('password').value = 'password';
+        document.getElementById('loginForm').submit();
+    })
+
 });

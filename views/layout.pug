@@ -10,19 +10,24 @@ html
     div.townsquare-dark__nav
       nav.townsquare-dark__navbar
         div.townsquare-dark__navbar--highlight
-        img.townsquare-dark__navbar--image(src="/townsquare_logo_sm.png")
+        a(href='/' class='townsquare-dark__navbar--image')
+          img.townsquare-dark__navbar--image(src="/townsquare_logo_sm.png")
         a.townsquare-dark__navbar--modalLeft Products
         div.townsquare-dark__navbar--searchWrapper
           img(src="/magnifyingGlass.png" width="100px" id='townsquare__searchForm--searchbarIcon')
           form(id='townsquare__searchForm' action='/search' method='post')
               input(type="search" name='searchQuery' id='townsquare__searchForm--searchbar' class="townsquare-dark__navbar--searchbar" placeholder="Search")
               button(type='submit' id='townsquare__searchForm--searchButton' class='townsquare-dark__navbar--searchSubmit' hidden)
-        a.townsquare-dark__navbar--icon I1
-        a.townsquare-dark__navbar--icon2 I2
-        a.townsquare-dark__navbar--icon3 I3
-        a.townsquare-dark__navbar--icon4 I4
-        a.townsquare-dark__navbar--icon5 I5
-
+        a(class='townsquare-dark__navbar--icon' href='/') 
+          img(class='townsquare-dark__navbar--icon' src='trophy_grey.png')
+        a(class='townsquare-dark__navbar--icon2' href='/') 
+          img(class='townsquare-dark__navbar--icon2' src='instagram-like_grey.png')
+        a(class='townsquare-dark__navbar--icon3' href='/') 
+          img(class='townsquare-dark__navbar--icon3' src='takeaway-fast-food_grey.png')
+        a(class='townsquare-dark__navbar--icon4' href='/') 
+          img(class='townsquare-dark__navbar--icon4' src='map-pin_grey.png')
+        a(class='townsquare-dark__navbar--icon5' href='/') 
+          img(class='townsquare-dark__navbar--icon5' src='unlocked_grey.png')
     div.townsquare-dark__main
       div.townsquare-dark__leftSidebar
         a(href='/') Home
@@ -41,13 +46,21 @@ html
             div.townsquare-dark__rightSidebar--overflowItemHeader
               h2 The Overflow Blog
             div.townsquare-dark__rightSidebar--overflowItemContent
-              p <icon>i</icon>
-              p <icon>i</icon>
+              p New York City needs pizza the same way a 
+              p plant needs sunlight or a subway needs a 
+              p conductor. In other words, it’s important, 
+              p here’s where to eat in NYC: 
+              p(style='font-weight:bold') Tony And Tina's Pizzeria
+              p(style='font-weight:bold') Totonno Pizzeria Napolitana
+              p(style='font-weight:bold') Joe's Pizza
+              p(style='font-weight:bold') Paulie Gee’s Slice Shop
+
+              
           div.townsquare-dark__rightSidebar--overflowItem
             div.townsquare-dark__rightSidebar--overflowItemHeader
               h2 Featured on Meta
             div.townsquare-dark__rightSidebar--overflowItemContent
-              p <icon>i</icon> An item
+              p i 
     <script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
     <!-- Script element sourcing the TinyMCE configuration -->
     <script type="application/javascript" src= "/tinymce-config.js"></script>
