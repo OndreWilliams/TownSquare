@@ -23,13 +23,14 @@ block content
                     div.townsquare-dark__contentArea--QuestionAreavoteCommentWrapper
                         h3= comment.content
     div.townsquare-dark__contentArea--QuestionAreaFooter
-        form(action='/questionView/answer' method='post')
+        form(action='/questionView/answer' method='post' id='submitQuestionForm')
             h3 Know someone who can answer? Share a link to this question via email, Twitter, or Facebook.
             h2 Your Answer
             //input(type='text' id='contentTitle' name='contentTitle' placeholder="e.g. Where is the best pizza in NY?" required)
             input(type='hidden' name='questionId' value= question.id)
             //h2 Body
-            textarea(id='tinyEditTextArea' name='content')
-            button(type='submit') Post your answer
+            textarea(id='tinyEditTextArea')
+            input(type='hidden' name='content' id="questionContent" value="")
+            button( id='submitQuestionButton') Post your answer
             h3 Browse other questions tagged google-apps-marketplace or ask your own question.
 

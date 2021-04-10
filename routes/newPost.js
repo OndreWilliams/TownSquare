@@ -20,14 +20,20 @@ router.post('/question', questionValidators, asyncHandler(async (req, res) => {
     const {
       content,
     } = req.body;
-    console.log(content)
+    // console.log('111111111111111111111111111111111111')
+    // console.log('111111111111111111111111111111111111')
+    // console.log('111111111111111111111111111111111111')
+    // console.log('111111111111111111111111111111111111')
+    // console.log(req.body.content)
+    // console.log(req.body)
+    // console.log(content)
     const question = db.Question.build({
       content,
       userId: res.locals.user.id,
       cityId: 1
     });
-    console.log('!!!! ----- ')
-    console.log(res.locals.user)
+    // console.log('!!!! ----- ')
+    // console.log(res.locals.user)
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {
       await question.save();

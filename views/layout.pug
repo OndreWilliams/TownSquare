@@ -41,12 +41,13 @@ html
     div.townsquare-dark__main
       div.townsquare-dark__leftSidebar
         a(href='/') Home
-        a(href='/account/signup') Sign Up
+        if !user
+          a(href='/account/signup') Sign Up
         a(href='/about') About
-        if user
-          a LOGGED IN
-          a= user.username
-          a(href="/account/signout") LOGOUT
+        //if user
+        //  a LOGGED IN
+        //  a= user.username
+        //  a(href="/account/signout") LOGOUT
       div.townsquare-dark__contentArea
         block content
       div.townsquare-dark__rightSidebar

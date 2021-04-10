@@ -53,6 +53,7 @@ asyncHandler(async (req, res) => {
         try {
             await user.save();
             loginUser(req, res, user);
+            res.redirect('/');
         }
         catch (err){
             const errors = ['User already has an account. Please login', 'Password request not available at this time.']
