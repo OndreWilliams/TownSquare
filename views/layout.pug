@@ -20,7 +20,11 @@ html
               button(type='submit' id='townsquare__searchForm--searchButton' class='townsquare-dark__navbar--searchSubmit' hidden)
         if user
           a(href="/account/signout" id='logout_button' class='townsquare-dark__navbar--logout')
-            p(id='logout_text')= user.username[0]
+            if user.username
+              p(id='logout_text')= user.username[0]
+            else
+              a(href="/account/" class='townsquare-dark__navbar--login')
+                p(id='login_text') Login
         else
           a(href="/account/" class='townsquare-dark__navbar--login')
             p(id='login_text') Login
