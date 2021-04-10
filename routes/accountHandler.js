@@ -50,9 +50,18 @@ asyncHandler(async (req, res) => {
         const hashed = await bcrypt.hash(password, 8);
         user.hPassword = hashed;
         console.log(user, hashed);
-        await user.save();
-        loginUser(req, res, user);
-        res.redirect('/');
+        try {
+            await user.save();
+            loginUser(req, res, user);
+        }
+        catch (err){
+            const errors = ['User already has an account. Please login', 'Password request not available at this time.']
+            res.render('signup', {
+                user,
+                errors,
+                csrfToken: req.csrfToken()
+            });
+        }
     } else {
         const errors = validatorErrors.array().map(error => error.msg);
         res.render('signup', {

@@ -18,6 +18,16 @@ html
           form(id='townsquare__searchForm' action='/search' method='post')
               input(type="search" name='searchQuery' id='townsquare__searchForm--searchbar' class="townsquare-dark__navbar--searchbar" placeholder="Search")
               button(type='submit' id='townsquare__searchForm--searchButton' class='townsquare-dark__navbar--searchSubmit' hidden)
+        if user
+          a(href="/account/signout" id='logout_button' class='townsquare-dark__navbar--logout')
+            if user.username
+              p(id='logout_text')= user.username[0]
+            else
+              a(href="/account/" class='townsquare-dark__navbar--login')
+                p(id='login_text') Login
+        else
+          a(href="/account/" class='townsquare-dark__navbar--login')
+            p(id='login_text') Login
         a(class='townsquare-dark__navbar--icon' href='/')
           img(class='townsquare-dark__navbar--icon' src='/trophy_grey.png')
         a(class='townsquare-dark__navbar--icon2' href='/')
@@ -31,7 +41,6 @@ html
     div.townsquare-dark__main
       div.townsquare-dark__leftSidebar
         a(href='/') Home
-        a(href='/account') Login
         a(href='/account/signup') Sign Up
         a(href='/about') About
         if user
@@ -132,5 +141,3 @@ html
               p
               p
               p site design / logo © 2021 manaslu group Inc; user contributions J.Devine O.Williams Shahene
-
-
