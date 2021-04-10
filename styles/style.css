@@ -54,13 +54,13 @@ body.townsquare-dark {
     top: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 12.5% 12.5% 60% 3% 3% 3% 3% 3%;
+    grid-template-columns: 12.5% 12.5% 47% 13% 3% 3% 3% 3% 3%;
     grid-template-rows: 3px 47px;
     box-shadow: 0px 5px 10px black;
     gap: 0px 0px;
     grid-template-areas:
-    "hglt hglt hglt hglt hglt hglt hglt hglt"
-    "nav1 nav2 nav3 nav4 nav5 nav6 nav7 nav8";
+    "hglt hglt hglt hglt hglt hglt hglt hglt hglt"
+    "nav1 nav2 nav3 nav4 nav5 nav6 nav7 nav8 nav9";
 }
 .townsquare-dark__navbar--highlight{
     grid-area: hglt;
@@ -139,33 +139,76 @@ body.townsquare-dark {
     right: -30px;
     z-index: 1;
 }
-.townsquare-dark__navbar--icon {
+.townsquare-dark__navbar--logout{
     grid-area: nav4;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 3px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    background-color: #f48024;
+    color: #2d2d2d;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+#logout_text{
+    margin: auto;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+.townsquare-dark__navbar--login{
+    grid-area: nav4;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 3px;
+    width: 100%;
+    max-width: 60px;
+    height: 60%;
+    border-radius: 2px;
+    background-color:  #2d2d2d;
+    color: #f48024;
+    text-decoration: none;
+    /* box-sizing: border-box; */
+}
+#login_text{
+    margin: auto;
+    margin-top: 0;
+    font-size: large;
+    text-align: center;
+}
+.townsquare-dark__navbar--icon {
+    grid-area: nav5;
     margin: auto;
     width:20px;
     height:25px;
 }
 
 .townsquare-dark__navbar--icon2 {
-    grid-area: nav5;
+    grid-area: nav6;
     margin: auto;
     width:25px;
     height:25px;
 }
 .townsquare-dark__navbar--icon3 {
-    grid-area: nav6;
-    margin: auto;
-    width:20px;
-    height:25px;
-}
-.townsquare-dark__navbar--icon4 {
     grid-area: nav7;
     margin: auto;
     width:20px;
     height:25px;
 }
-.townsquare-dark__navbar--icon5 {
+.townsquare-dark__navbar--icon4 {
     grid-area: nav8;
+    margin: auto;
+    width:20px;
+    height:25px;
+}
+.townsquare-dark__navbar--icon5 {
+    grid-area: nav9;
     margin: auto;
     width:20px;
     height:25px;
