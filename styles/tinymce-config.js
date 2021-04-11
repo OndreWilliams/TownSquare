@@ -2,8 +2,8 @@ tinymce.init({
     selector: 'textarea#tinyEditTextArea',
     height: 300,
     menubar: false,
-    skin: "townsquare",
-    content_css: "townsquare",
+    skin: "oxide-dark",
+    content_css: "dark",
     plugins: [
         'advlist autolink lists link image charmap print preview anchor',
         'searchreplace visualblocks code fullscreen',
@@ -30,7 +30,6 @@ tinymce.init({
         });
     }
 });
-
 if (document.getElementById('submitQuestionForm')){
     document.getElementById('submitQuestionButton').addEventListener('click', (event)=> {
         document.getElementById('submitQuestionForm').submit();
