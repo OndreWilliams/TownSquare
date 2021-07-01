@@ -1,4 +1,16 @@
 # TownSquare
+SPRINT TO DO'S
+-------------------------
+* Filter buttons
+
+* Sidebar content styling
+
+* Responsiveness (questions overflowing on narrow screen)
+
+* Consistent shadows
+
+-------------------------
+
 ACCOUNT CREATION
 
  - Finish user auth from end to end
